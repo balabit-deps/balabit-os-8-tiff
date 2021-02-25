@@ -1,7 +1,8 @@
 Source: tiff
 Section: libs
 Priority: optional
-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
 Build-Depends: debhelper (>= 11),
                freeglut3-dev,
                libglu1-mesa-dev,
