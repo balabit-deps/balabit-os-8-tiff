@@ -1,3 +1,29 @@
+tiff (4.1.0+git191117-2ubuntu0.20.04.3) focal-security; urgency=medium
+
+  * SECURITY UPDATE: malloc failure in TIFF2RGBA tool
+    - debian/patches/CVE-2020-35522.patch: enforce (configurable) memory
+      limit in tools/tiff2rgba.c.
+    - CVE-2020-35522
+  * SECURITY UPDATE: null pointer in TIFFReadDirectory
+    - debian/patches/CVE-2022-0561.patch: add sanity check to ensure
+      pointer provided to memcpy is not null in libtiff/tif_dirread.c.
+    - CVE-2022-0561
+  * SECURITY UPDATE: null pointer in TIFFFetchStripThing
+    - debian/patches/CVE-2022-0562.patch: add sanity check to ensure
+      pointer provided to memcpy is not null in libtiff/tif_dirread.c.
+    - CVE-2022-0562
+  * SECURITY UPDATE: denial of service through assertion failure.
+    - debian/patches/CVE-2022-0865.patch: reset flags to initial state
+      when file has multiple IFD and when bit reversal is needed in
+      libtiff/tif_jbig.c.
+    - CVE-2022-0865
+  * SECURITY UPDATE: heap buffer overflow in ExtractImageSection
+    - debian/patches/CVE-2022-0891.patch: correct wrong formula for
+      image row size calculation in tools/tiffcrop.c.
+    - CVE-2022-0891
+
+ -- David Fernandez Gonzalez <david.fernandezgonzalez@canonical.com>  Thu, 12 May 2022 17:05:25 +0200
+
 tiff (4.1.0+git191117-2ubuntu0.20.04.2) focal-security; urgency=medium
 
   * SECURITY UPDATE: buffer overflow via TIFFTAG_PREDICTOR
