@@ -1,3 +1,45 @@
+tiff (4.1.0+git191117-2ubuntu0.20.04.5) focal-security; urgency=medium
+
+  * SECURITY UPDATE: buffer overflow issue in tiffinfo tool
+    - debian/patches/CVE-2022-1354.patch: TIFFReadDirectory: fix OJPEG hack
+    - CVE-2022-1354
+  * SECURITY UPDATE: buffer overflow issue in tiffcp tool
+    - debian/patches/CVE-2022-1355.patch: tiffcp: avoid buffer overflow in
+      "mode" string.
+    - CVE-2022-1355
+  * SECURITY UPDATE: Divide By Zero error in tiffcrop
+    - debian/patches/CVE-2022-2056_2057_2058.patch: fix the FPE in tiffcrop
+    - CVE-2022-2056
+    - CVE-2022-2057
+    - CVE-2022-2058
+
+ -- Nishit Majithia <nishit.majithia@canonical.com>  Fri, 19 Sep 2022 19:19:45 +0530
+
+tiff (4.1.0+git191117-2ubuntu0.20.04.4) focal-security; urgency=medium
+
+  * SECURITY UPDATE: NULL Pointer Dereference 
+    - debian/patches/CVE-2022-0907.patch: add checks for return value of
+    limitMalloc in tools/tiffcrop.c.
+    - debian/patches/CVE-2022-0908.patch: avoid
+    calling memcpy() with a null source pointer and size of zero in
+    libtiff/tif_dirread.c.
+    - CVE-2022-0907
+    - CVE-2022-0908
+  * SECURITY UPPDATE: floating point exception 
+    - debian/patches/CVE-2022-0909.patch: fix the FPE in tiffcrop by
+    checking if variable is Nan in libtiff/tif_dir.c.
+    - CVE-2022-0909
+  * SECURITY UPDATE: heap buffer overflow in cpContigBufToSeparateBuf
+    - debian/patches/CVE-2022-0924.patch: fix heap buffer overflow in
+    tools/tiffcp.c. 
+    - CVE-2022-0924
+  * SECURITY UPDATE: out-of-bounds with custom tag
+    - debian/patches/CVE-2022-22844.patch: fix global-buffer-overflow
+    for ASCII tags where count is required in tools/tiffset.c.
+    - CVE-2022-22844
+
+ -- David Fernandez Gonzalez <david.fernandezgonzalez@canonical.com>  Wed, 07 Sep 2022 11:01:17 +0200
+
 tiff (4.1.0+git191117-2ubuntu0.20.04.3) focal-security; urgency=medium
 
   * SECURITY UPDATE: malloc failure in TIFF2RGBA tool
