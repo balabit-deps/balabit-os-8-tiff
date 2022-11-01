@@ -1,3 +1,28 @@
+tiff (4.1.0+git191117-2ubuntu0.20.04.6) focal-security; urgency=medium
+
+  * SECURITY UPDATE: out-of-bound read/write in tiffcrop
+    - debian/patches/CVE-2022-2867_2868_2869.patch: Fix heap-buffer-overflow by
+      correcting uint32_t underflow
+    - CVE-2022-2867
+    - CVE-2022-2868
+    - CVE-2022-2869  
+  * SECURITY UPDATE: heap-based buffer overflow
+    - debian/patches/CVE-2022-3570_3598.patch: increases buffer sizes for
+      subroutines in tools/tiffcrop.c.
+    - CVE-2022-3570
+    - CVE-2022-3598
+  * SECURITY UPDATE: out-of-bound write in tiffcrop
+    - debian/patches/CVE-2022-3599.patch: Revised handling of TIFFTAG_INKNAMES
+      and related TIFFTAG_NUMBEROFINKS value
+    - CVE-2022-3599
+  * SECURITY UPDATE: stack overflow in _TIFFVGetField
+    - debian/patches/CVE-2022-34526.patch: Add _TIFFCheckFieldIsValidForCodec()
+      return FALSE when passed a codec-specific tag and the codec is not
+      configured
+    - CVE-2022-34526 
+
+ -- Nishit Majithia <nishit.majithia@canonical.com>  Tue, 01 Nov 2022 20:55:02 +0530
+
 tiff (4.1.0+git191117-2ubuntu0.20.04.5) focal-security; urgency=medium
 
   * SECURITY UPDATE: buffer overflow issue in tiffinfo tool
